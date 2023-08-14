@@ -7,7 +7,7 @@ pipeline {
                 sh 'pip install -r requirements.txt'
                 sh 'chmod u+x hello.py'
                 sh 'touch result.txt'
-                sh 'python3 hello.py -n Vladislav'
+                sh 'python3 hello.py -n Vladislav >> result.txt'
             }
         }
         stage('2-ARCHIVEARTIFACT') {
