@@ -11,7 +11,7 @@ pipeline {
                 sh 'apt-get install -y python3-pip'
                 sh 'apt-get install -y python3.11-venv'
                 sh 'python3 -m venv my_venv'
-                sh 'source my_venv/bin/activate'
+                sh '. my_venv/bin/activate'
                 sh 'chmod u+x hello.py'
                 sh 'pip install -r requirements.txt'
                 sh 'touch result.txt'
