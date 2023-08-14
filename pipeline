@@ -1,19 +1,11 @@
 pipeline {
-    agent {
-      docker {
-        image 'debian:bookworm-slim'
-      }
-    }
+    agent any
     stages {
         stage('1-EXECUTION') {
             steps {
-                sh 'apt-get update'
-                sh 'apt-get install -y python3-pip'
-                sh 'apt-get install -y python3.11-venv'
-                sh 'python3 -m venv my_venv'
-                sh '. my_venv/bin/activate'
-                sh 'chmod u+x hello.py'
+                sh 'sudo apt install -y python3-pip'
                 sh 'pip install -r requirements.txt'
+                sh 'chmod u+x hello.py'
                 sh 'touch result.txt'
                 sh './hello.py -n Vladislav >> result.txt'
             }
