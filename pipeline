@@ -10,7 +10,7 @@ pipeline {
                 sh 'apt-get update'
                 sh 'apt-get install -y python3-pip'
                 sh 'python3 -m venv my_venv'
-                sh 'source my_env/bin/activate'
+                sh 'source my_venv/bin/activate'
                 sh 'chmod u+x hello.py'
                 sh 'pip install -r requirements.txt'
                 sh 'touch result.txt'
