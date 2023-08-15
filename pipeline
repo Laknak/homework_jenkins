@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('1-EXECUTION') {
             steps {
+                sh 'apt update && apt install sudo -y'
                 sh 'sudo apt install -y python3-pip'
                 sh 'pip install -r requirements.txt'
                 sh 'chmod u+x hello.py'
